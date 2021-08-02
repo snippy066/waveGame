@@ -10,17 +10,17 @@ public class Window extends Canvas {
 	private static final long serialVersionUID = 1L;
 	
 	public Window(int width, int height, String title,gameMain game) {
-		JFrame frame=new JFrame(title);
+		JFrame frm=new JFrame(title);
 		
-		frame.setPreferredSize(new Dimension(width,height));
-		frame.setMaximumSize(new Dimension(width,height));
-		frame.setMinimumSize(new Dimension(width,height));
+		frm.setPreferredSize(new Dimension(width,height));
+		frm.setMaximumSize(new Dimension(width,height));
+		frm.setMinimumSize(new Dimension(width,height));
 		
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setResizable(false);
-		frame.setLocationRelativeTo(null);
-		frame.add(game);
-		frame.setVisible(true);
+		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frm.setResizable(false);
+		frm.setLocationRelativeTo(null);
+		frm.add(game);
+		frm.setVisible(true);
 		game.start();
 		
 	}
