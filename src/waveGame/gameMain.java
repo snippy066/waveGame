@@ -78,6 +78,14 @@ public class gameMain extends Canvas implements Runnable {
 	                ticks = 0;
 	            }
 	        }
+	        stop();
+	 }
+	 
+	 private void tick() {
+		 
+	 }
+	 private void render() {
+		 
 	 }
 	public static void main(String[] args) {
 		new gameMain();
