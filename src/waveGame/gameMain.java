@@ -1,6 +1,7 @@
 package waveGame;
 
 import java.awt.Canvas;
+import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 public class gameMain extends Canvas implements Runnable {
@@ -20,7 +21,7 @@ public class gameMain extends Canvas implements Runnable {
 	}
 
 	public synchronized void start() {
-		thread=new Thread();
+		thread=new Thread(this);
 		thread.start();
 		running=true;
 		
@@ -92,6 +93,10 @@ public class gameMain extends Canvas implements Runnable {
 			 return;
 		 }
 		 
+		 Graphics g=bs.getDrawGraphics();
+		 
+		 g.dispose();
+		 bs.show();
 	 }
 	public static void main(String[] args) {
 		new gameMain();
