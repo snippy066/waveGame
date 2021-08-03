@@ -1,6 +1,7 @@
 package waveGame;
 
 import java.awt.Canvas;
+import java.awt.image.BufferStrategy;
 
 public class gameMain extends Canvas implements Runnable {
 	
@@ -85,6 +86,11 @@ public class gameMain extends Canvas implements Runnable {
 		 
 	 }
 	 private void render() {
+		 BufferStrategy bs=this.getBufferStrategy();
+		 if(bs==null) {
+			 this.createBufferStrategy(3);
+			 return;
+		 }
 		 
 	 }
 	public static void main(String[] args) {
