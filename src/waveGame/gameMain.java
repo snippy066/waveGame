@@ -1,6 +1,7 @@
 package waveGame;
 
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
@@ -94,6 +95,9 @@ public class gameMain extends Canvas implements Runnable {
 		 }
 		 
 		 Graphics g=bs.getDrawGraphics();
+		 
+		g.setColor(Color.GREEN);
+		g.fillRect(0, 0, w, d);
 		 
 		 g.dispose();
 		 bs.show();
