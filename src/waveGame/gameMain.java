@@ -18,7 +18,7 @@ public class gameMain extends Canvas implements Runnable {
 	
 	public gameMain() {
 		new Window(w,d,tit,this);
-		System.out.println("game started");
+		//System.out.println("game started");
 	}
 
 	public synchronized void start() {
@@ -59,7 +59,7 @@ public class gameMain extends Canvas implements Runnable {
 	            while (delta >= 1) {
 	                ticks++;
 	                tick();
-	                delta -= 1;
+	                delta --;
 	                shouldRender = true;
 	            }
 	            
@@ -87,6 +87,7 @@ public class gameMain extends Canvas implements Runnable {
 	 private void tick() {
 		 
 	 }
+	 
 	 private void render() {
 		 BufferStrategy bs=this.getBufferStrategy();
 		 if(bs==null) {
@@ -102,6 +103,7 @@ public class gameMain extends Canvas implements Runnable {
 		 g.dispose();
 		 bs.show();
 	 }
+	 
 	public static void main(String[] args) {
 		new gameMain();
 
