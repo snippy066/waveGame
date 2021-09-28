@@ -11,8 +11,7 @@ public class Player extends GameObject {
 	public Player(int x, int y, ID id) {
 		super(x, y, id);
 	
-		spdX=r.nextInt(5)+1;
-		spdY=r.nextInt(5);
+		
 	}
 
 	@Override
@@ -24,7 +23,7 @@ public class Player extends GameObject {
 
 	@Override
 	public void render(Graphics g) {
-		g.setColor(Color.red);
+		g.setColor(Color.black);
 		g.fillRect(x, y,32, 32);
 		
 	}
