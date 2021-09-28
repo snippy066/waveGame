@@ -11,8 +11,8 @@ public class gameMain extends Canvas implements Runnable {
 	private static final long serialVersionUID = 7006633468047331596L;
 	
 	public static final int w=800;     //width
-	public static final int d=w/12*9;	//height
-	public static final String tit="Wave";	//title 
+	public static final int h=w/12*9;	//height
+	public static final String tit="Wave Game";	//title 
 	
 	private Thread thread;
 	private boolean running=false;
@@ -22,16 +22,16 @@ public class gameMain extends Canvas implements Runnable {
 	private Random r;
 	
 	public gameMain() {
-		new Window(w,d,tit,this);
-		//System.out.println("game started");
-		
 		handler=new Handler();
+		
+		this.addKeyListener(new KeyInput(handler));
+		new Window(w,h,tit,this);
+		
 		r=new Random();
 		
-		for(int i=0;i<50;i++) {
-		handler.addObject(new Player(10,15,ID.Player));
+		handler.addObject(new Player(w/2-32,h/2-32 ,ID.Player));
+		handler.addObject(new BasicEnemy(w/2-64,h/2-32 ,ID.BasicEnemy));
 		
-		}
 	}
 
 	public synchronized void start() {
@@ -89,7 +89,7 @@ public class gameMain extends Canvas implements Runnable {
 	            
 	            if (System.currentTimeMillis() - lastTimer >= 1000) {
 	                lastTimer += 1000;
-	                System.out.println(ticks + " ticks, " + frames + " frames");
+	                //System.out.println(ticks + " ticks, " + frames + " frames");
 	                frames = 0;
 	                ticks = 0;
 	            }
@@ -111,7 +111,7 @@ public class gameMain extends Canvas implements Runnable {
 		 Graphics g=bs.getDrawGraphics();
 		 
 		g.setColor(Color.GREEN);
-		g.fillRect(0, 0, w, d);
+		g.fillRect(0, 0, w, h);
 		
 		handler.render(g);
 		 
