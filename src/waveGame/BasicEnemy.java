@@ -7,7 +7,7 @@ public class BasicEnemy extends GameObject{
 
 	public BasicEnemy(int x, int y, ID id) {
 		super(x, y, id);
-		//spdX=5;
+		spdX=5;
 		spdY=5;
 	}
 
@@ -19,6 +19,7 @@ public class BasicEnemy extends GameObject{
 		
 		
 		if(y<=0 || y>=gameMain.h-48)  spdY*=-1;
+		if(x<=0 || x>=gameMain.h-16)  spdX*=-1;
 		
 	}
 
