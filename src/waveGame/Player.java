@@ -19,6 +19,9 @@ public class Player extends GameObject {
 		x+=spdX;
 		y+=spdY;
 		
+		x=gameMain.clamp(x, 3, gameMain.w-48);
+		y=gameMain.clamp(y, 3, gameMain.h-72);
+		
 	}
 
 	@Override
@@ -27,5 +30,6 @@ public class Player extends GameObject {
 		g.fillRect(x, y,32, 32);
 		
 	}
+	
 
 }

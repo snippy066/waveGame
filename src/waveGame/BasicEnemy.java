@@ -19,7 +19,7 @@ public class BasicEnemy extends GameObject{
 		
 		
 		if(y<=0 || y>=gameMain.h-48)  spdY*=-1;
-		if(x<=0 || x>=gameMain.h-16)  spdX*=-1;
+		if(x<=0 || x>=gameMain.w-32)  spdX*=-1;
 		
 	}
 

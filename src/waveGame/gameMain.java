@@ -20,6 +20,7 @@ public class gameMain extends Canvas implements Runnable {
 	
 	private Handler handler;
 	private Random r;
+	private HUD hud;
 	
 	public gameMain() {
 		handler=new Handler();
@@ -27,10 +28,15 @@ public class gameMain extends Canvas implements Runnable {
 		this.addKeyListener(new KeyInput(handler));
 		new Window(w,h,tit,this);
 		
+		hud=new HUD();
+		
 		r=new Random();
 		
 		handler.addObject(new Player(w/2-32,h/2-32 ,ID.Player));
-		handler.addObject(new BasicEnemy(w/2-64,h/2-32 ,ID.BasicEnemy));
+		
+		for(int i=0;i<20;i++) {
+		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy));
+		}
 		
 	}
 
@@ -54,6 +60,7 @@ public class gameMain extends Canvas implements Runnable {
 	}
 	
 	 public void run() {
+		 	this.requestFocus();
 	        long lastTime = System.nanoTime();
 	        double nsPerTick = 1000000000D / 64;
 	        
@@ -99,6 +106,7 @@ public class gameMain extends Canvas implements Runnable {
 	 
 	 private void tick() {
 		 handler.tick();
+		 hud.tick();
 	 }
 	 
 	 private void render() {
@@ -114,9 +122,21 @@ public class gameMain extends Canvas implements Runnable {
 		g.fillRect(0, 0, w, h);
 		
 		handler.render(g);
+		hud.render(g);
 		 
 		 g.dispose();
 		 bs.show();
+	 }
+	 
+	 
+	 //clamp method to clamp player position
+	 public static int clamp(int pos,int min,int max) {
+		 if(pos>=max)
+			 return pos=max;
+		 else if(pos<=min)
+			 return pos=min;
+		 else
+			 return pos;
 	 }
 	 
 	public static void main(String[] args) {
