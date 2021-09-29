@@ -34,9 +34,11 @@ public class gameMain extends Canvas implements Runnable {
 		
 		handler.addObject(new Player(w/2-32,h/2-32 ,ID.Player));
 		
-		for(int i=0;i<20;i++) {
+//		for(int i=0;i<20;i++) {
+//		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy));
+//		}
+		
 		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy));
-		}
 		
 	}
 
@@ -118,7 +120,7 @@ public class gameMain extends Canvas implements Runnable {
 		 
 		 Graphics g=bs.getDrawGraphics();
 		 
-		g.setColor(Color.GREEN);
+		g.setColor(Color.black);
 		g.fillRect(0, 0, w, h);
 		
 		handler.render(g);

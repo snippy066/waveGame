@@ -2,6 +2,7 @@ package waveGame;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.util.Random;
 
 public class Player extends GameObject {
@@ -13,6 +14,7 @@ public class Player extends GameObject {
 	
 		
 	}
+	
 
 	@Override
 	public void tick() {
@@ -26,9 +28,16 @@ public class Player extends GameObject {
 
 	@Override
 	public void render(Graphics g) {
-		g.setColor(Color.black);
+		g.setColor(Color.white);
 		g.fillRect(x, y,32, 32);
 		
+	}
+
+
+	@Override
+	public Rectangle getBounds() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 

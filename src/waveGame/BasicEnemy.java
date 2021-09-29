@@ -2,6 +2,7 @@ package waveGame;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 public class BasicEnemy extends GameObject{
 
@@ -18,8 +19,8 @@ public class BasicEnemy extends GameObject{
 		y+=spdY;
 		
 		
-		if(y<=0 || y>=gameMain.h-48)  spdY*=-1;
-		if(x<=0 || x>=gameMain.w-32)  spdX*=-1;
+		if(y<=0 || y>=gameMain.h-32)  spdY*=-1;
+		if(x<=0 || x>=gameMain.w-64)  spdX*=-1;
 		
 	}
 
@@ -29,6 +30,12 @@ public class BasicEnemy extends GameObject{
 		g.setColor(Color.red);
 		g.fillRect(x,y,16,16);
 		
+	}
+
+	@Override
+	public Rectangle getBounds() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
