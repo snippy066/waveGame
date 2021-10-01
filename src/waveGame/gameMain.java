@@ -38,8 +38,8 @@ public class gameMain extends Canvas implements Runnable {
 //		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy));
 //		}
 		
-		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy));
-		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy));
+		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy,handler));
+//		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy));
 		
 	}
 
