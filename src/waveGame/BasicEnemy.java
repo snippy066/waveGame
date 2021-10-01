@@ -35,7 +35,7 @@ public class BasicEnemy extends GameObject{
 	@Override
 	public Rectangle getBounds() {
 		// TODO Auto-generated method stub
-		return null;
+		return new Rectangle(x,y,16,16);
 	}
 
 }

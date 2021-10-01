@@ -32,12 +32,13 @@ public class gameMain extends Canvas implements Runnable {
 		
 		r=new Random();
 		
-		handler.addObject(new Player(w/2-32,h/2-32 ,ID.Player));
+		handler.addObject(new Player(w/2-32,h/2-32 ,ID.Player,handler));
 		
 //		for(int i=0;i<20;i++) {
 //		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy));
 //		}
 		
+		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy));
 		handler.addObject(new BasicEnemy(r.nextInt(w),r.nextInt(h),ID.BasicEnemy));
 		
 	}
