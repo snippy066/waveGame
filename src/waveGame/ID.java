@@ -3,6 +3,7 @@ package waveGame;
 public enum ID {
 	
 	Player(),
-	BasicEnemy();
+	BasicEnemy(),
+	BasicTrail();
 
 }
