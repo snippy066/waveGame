@@ -5,9 +5,12 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 public class BasicEnemy extends GameObject{
+	private Handler handler;
 
-	public BasicEnemy(int x, int y, ID id) {
+	public BasicEnemy(int x, int y, ID id,Handler handler) {
 		super(x, y, id);
+		this.handler=handler;
+		
 		spdX=5;
 		spdY=5;
 	}
@@ -21,6 +24,8 @@ public class BasicEnemy extends GameObject{
 		
 		if(y<=0 || y>=gameMain.h-32)  spdY*=-1;
 		if(x<=0 || x>=gameMain.w-64)  spdX*=-1;
+		
+		handler.addObject(new BasicTrail(x,y,Color.red,16,16,0.01f,ID.BasicTrail,handler));
 		
 	}
 
