@@ -6,7 +6,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.util.Random;
 
-public class gameMain extends Canvas implements Runnable {
+public class Game extends Canvas implements Runnable {
 	
 	private static final long serialVersionUID = 7006633468047331596L;
 	
@@ -22,7 +22,7 @@ public class gameMain extends Canvas implements Runnable {
 	private Random r;
 	private HUD hud;
 	
-	public gameMain() {
+	public Game() {
 		handler=new Handler();
 		
 		this.addKeyListener(new KeyInput(handler));
@@ -142,7 +142,7 @@ public class gameMain extends Canvas implements Runnable {
 	 }
 	 
 	public static void main(String[] args) {
-		new gameMain();
+		new Game();
 
 	}
 
